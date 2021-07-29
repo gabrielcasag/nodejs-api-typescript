@@ -8,7 +8,7 @@
     "email": "gaspericasag@gmail.com"
   },
   "scripts": {
-    "dev": "ts-node-dev --transpile-only --ignore-watch node_modules --respawn rc/server.ts"
+    "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn src/server.ts"
   },
   "dependencies": {
     "express": "^4.17.1"
