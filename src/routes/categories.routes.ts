@@ -11,24 +11,24 @@ categoriesRoutes.post('/', (req, res) => {
   const nameAlreadyExists = categoriesRepo.findByName(name);
 
   if (nameAlreadyExists) {
-    res.status(409).send({
+    return res.status(409).send({
       message: 'Category with the same name already exists',
     });
   }
 
   categoriesRepo.create({ name, description });
 
-  res.status(201).send();
+  return res.status(201).send();
 });
 
 categoriesRoutes.get('/', (req, res) => {
   const categories = categoriesRepo.getAll();
 
   if (categories.length === 0) {
-    res.status(404).send();
+    return res.status(404).send();
   }
 
-  res.status(200).json(categories);
+  return res.status(200).json(categories);
 });
 
 export { categoriesRoutes };
