@@ -7,8 +7,17 @@ import {
 class CategoriesRepository implements ICategoriesRepository {
   private categories: Category[];
 
-  constructor() {
+  private static INSTANSE: ICategoriesRepository;
+
+  private constructor() {
     this.categories = [];
+  }
+
+  static getInstance(): ICategoriesRepository {
+    if (!CategoriesRepository.INSTANSE) {
+      CategoriesRepository.INSTANSE = new CategoriesRepository();
+    }
+    return CategoriesRepository.INSTANSE;
   }
 
   create({ name, description }: ICreateCategoryDTO): void {
@@ -17,7 +26,7 @@ class CategoriesRepository implements ICategoriesRepository {
     this.categories.push(category);
   }
 
-  getAll(): Category[] {
+  getAll(): Category[] | [] {
     return this.categories;
   }
 
