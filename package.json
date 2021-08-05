@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn src/server.ts",
-    "sonar-scan": "sonar-scanner -Dsonar.projectKey=nodejs_first_api -Dsonar.sources=. -Dsonar.host.url=http://localhost:9000 -Dsonar.login=65e5202381686281457f2e1eedd0428a17cf99db"
+    "sonar-scan": "sonar-scanner -Dsonar.projectKey=nodejs_first_api -Dsonar.sources=. -Dsonar.host.url=http://localhost:9000 -Dsonar.login=2204456f1b3c6dd45a0c0f1e0ddbd9bddc3150a0                              "
   },
   "dependencies": {
     "express": "^4.17.1",
